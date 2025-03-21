@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Position Examples</title>
+    <style>
+
+      /* position: static; is the default. The elements appear in normal document flow, one below the other. */
+
+      .static {
+        position: static; /* This is the default, so it's optional */
+        background-color: lightblue;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* The element moves relative to its original position by 20px down and 20px to the right, but it still takes up its original space in the flow. */
+
+      .relative {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background-color: lightgreen;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      /* The .absolute element is positioned absolutely inside the .absolute-container, 10px from the top and 10px from the right. It’s removed from the normal document flow, so it doesn’t affect other elements. */
+
+      .absolute-container {
+        position: relative; /* Positioning the container */
+        height: 200px;
+        background-color: lightgray;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: lightcoral;
+        padding: 10px;
+      }
+
+      /* The .fixed element stays fixed at the top-right corner of the viewport, even when you scroll the page. It's always visible. */
+
+      .fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: lightpink;
+        padding: 10px;
+        z-index: 1000;
+      }
+
+      /* The .sticky element behaves as relative until you scroll the page. Once it reaches the top of the viewport, it becomes fixed and stays there as you scroll further. */
+
+      .sticky-container {
+        height: 150px;
+        background-color: lightyellow;
+        padding: 10px;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 0;
+        background-color: lightblue;
+        padding: 10px;
+      }
+
+      .content {
+        height: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="static">I am static</div>
+    <div class="static">I am also static</div>
+
+    <div class="relative">I am relative</div>
+
+    <div class="absolute-container">
+      <div class="absolute">I am absolute</div>
+    </div>
+
+    <div class="fixed">I am fixed</div>
+
+    <div class="sticky-container">
+      <div class="sticky">I am sticky</div>
+    </div>
+    <p>Scroll down to see the sticky effect.</p>
+    <div class="content">
+      <!-- More content to make the page scroll -->
+      <p>Content...</p>
+      <p>Content...</p>
+      <p>Content...</p>
+    </div>
+  </body>
+</html>
